@@ -1,5 +1,12 @@
 ---
-- name: harp - testing with Vagrant
+- name: harp - installing dependencies
+  hosts: all
+  sudo: yes
+
+  roles:
+    - Ansibles.nodejs
+
+- name: harp - build sample webapp
   hosts: all
   sudo: yes
 
@@ -9,6 +16,8 @@
     harp_build_git_repo: 'https://github.com/cauliturtle/harp-simple-blog'
     harp_build_site_name: 'harp-simple-blog'
 
-  roles:
-    - Ansibles.nodejs
-    - .
+  vars_files:
+    - 'defaults/main.yml'
+
+  tasks:
+    - include: 'tasks/main.yml'
