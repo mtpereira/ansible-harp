@@ -1,38 +1,46 @@
-Role Name
+Harp
 ========
 
-A brief description of the role goes here.
+Ansible role for installing Harpjs and compiling an webapp.
+
+This role installs Harp (http://harpjs.com/) and builds a webapp from a given git repository or tarball.
 
 Requirements
 ------------
 
-Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here. For instance, if the role uses the EC2 module, it may be a good idea to mention in this section that the boto package is required.
+None.
 
 Role Variables
 --------------
 
-A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.
+* `harp_build_sources_path`: Directory where the sources will be saved. Defaults to `/tmp/harp_sources`.
+* `harp_build_output_path`: Directory where the compiled webapp will be stored. Defaults to `/tmp/harp_output`.
+* `harp_build_source_type`: Defines whether to fetch the webapp sources from a git repository (`git`) or a local tarball (`tar`). Defaults to `git`.
+* `harp_build_site_name`: Webapp name, used for naming the subdirectory where the compiled webapp will be stored. **Required**.
+* `harp_build_git_repo`: Git repository URL. Required if `harp_build_source_type` is set to `git`.
+* `harp_build_git_repo_branch`: Git branch to fetch. Defaults to `master`.
+* `harp_build_tar_file`: Local path for the webapp sources tarball. Required if `harp_build_source_type` is set to `tar`.
+* `harp_build_assets`: List with files and/or directories inside an `_assets` dir in your webapp source. It is used for placing non-compiled assets in your webapp after compilation.
 
 Dependencies
 ------------
 
-A list of other roles hosted on Galaxy should go here, plus any details in regards to parameters that may need to be set for other roles, or variables that are used from other roles.
+None, but using **mtpereira.common** or a similar role is recommended.
 
-Example Playbook
--------------------------
+Testing
+-------
 
-Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
-
-    - hosts: servers
-      roles:
-         - { role: username.rolename, x: 42 }
+For testing purposes, a Vagrantfile was added. Simply run ```./test.sh``` in your working copy dir to get a Debian host up and provisioned with ```harp.yml``` playbook.
 
 License
 -------
 
-BSD
+MIT
 
 Author Information
 ------------------
 
-An optional section for the role authors to include contact information, or a website (HTML is not allowed).
+[GitHub project page](https://github.com/mtpereira/ansible-harp)
+
+[Manuel Tiago Pereira](http://mtpereira.github.io)
+
