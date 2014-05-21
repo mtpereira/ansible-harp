@@ -8,7 +8,8 @@ install:
   - pip install ansible==1.5.0
 script:
   - echo localhost > inventory
-  - ansible-galaxy install --ignore-errors Ansibles.nodejs
-  - ansible-galaxy install --ignore-errors Ansibles.build-essential
+  - mkdir -f /home/travis/build/mtpereira/ansible-harp/roles/
+  - ansible-galaxy install --ignore-errors -p /home/travis/build/mtpereira/ansible-harp/roles/ Ansibles.nodejs
+  - ansible-galaxy install --ignore-errors -p /home/travis/build/mtpereira/ansible-harp/roles/ Ansibles.build-essential
   - ansible-playbook --syntax-check -i inventory harp.yml
   - ansible-playbook -i inventory harp.yml --connection=local --sudo
