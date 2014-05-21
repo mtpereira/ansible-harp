@@ -1,0 +1,33 @@
+---
+- name: build - create sources and output directories
+  file: dest={{ item }} state=directory
+  with_items:
+    - "{{ harp_build_sources_path }}"
+    - "{{ harp_build_output_path }}"
+  sudo: no
+
+- name: build - fetch app source from git
+  git: repo={{ harp_build_git_repo }}
+       dest={{ harp_build_sources_path }}/{{ harp_build_site_name }}
+       version={{ harp_build_git_repo_branch }}
+       accept_hostkey=yes
+  sudo: no
+  when: harp_build_source_type == 'git'
+
+- name: build - fetch app source from tarball
+  unarchive: src={{ harp_build_tar_file }}
+             dest={{ harp_build_sources_path }}
+  sudo: no
+  when: harp_build_source_type == 'tar'
+
+- name: build - perform build with harp
+  command: harp compile . {{ harp_build_output_path }} chdir={{ harp_build_sources_path }}/{{ harp_build_site_name }}
+
+- name: build - create directory for assets
+  file: dest={{ harp_build_output_path }}/assets state=directory
+  when: harp_build_assets is defined
+
+- name: build - copy assets to output path
+  command: cp -af "_assets/{{ item }}" "{{ harp_build_output_path }}/assets/{{ item }}" chdir={{ harp_build_sources_path }}/{{ harp_build_site_name }}
+  with_items: harp_build_assets
+  when: harp_build_assets is defined

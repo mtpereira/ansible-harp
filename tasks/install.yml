@@ -1,0 +1,6 @@
+---
+- name: harp - install nodejs
+  apt: pkg=nodejs update_cache=yes cache_valid_time=3600 state=present
+
+- name: harp - install harp
+  npm: name=harp global=yes state=present

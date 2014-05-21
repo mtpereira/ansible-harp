@@ -1,0 +1,10 @@
+# {{ ansible_managed }}
+
+<VirtualHost *:{{ harp_deploy_site.port }}>
+{% if item.vhostname is defined %}
+  ServerName {{ harp_deploy_site.vhostname }}
+{% endif %}
+  DocumentRoot {{ harp_deploy_site.path }}
+</VirtualHost>
+{% endfor %}
+
