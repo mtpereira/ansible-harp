@@ -1,3 +1,5 @@
 ---
 harp_build_git_repo_branch: 'master'
-harp_build_source: 'git'
+harp_build_source_type: 'git'
+harp_build_sources_path: /tmp/harp_sources
+harp_build_output_path: /tmp/harp_output
