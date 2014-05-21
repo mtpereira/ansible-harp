@@ -1,4 +1,4 @@
-Harp
+Harp [![Build Status](https://travis-ci.org/mtpereira/ansible-harp.svg)](https://travis-ci.org/mtpereira/ansible-harp)
 ========
 
 Ansible role for installing Harpjs and compiling an webapp.
