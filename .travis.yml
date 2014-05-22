@@ -10,6 +10,6 @@ script:
   - echo localhost > inventory
   - mkdir -p /home/travis/build/mtpereira/ansible-harp/roles/
   - ansible-galaxy install --ignore-errors -p /home/travis/build/mtpereira/ansible-harp/roles/ Ansibles.build-essential
-  - git clone https://github.com/mtpereira/nodejs.git /home/travis/build/mtpereira/ansible-harp/roles/Ansibles.nodejs
+  - git clone https://github.com/mtpereira/nodejs.git /home/travis/build/mtpereira/ansible-harp/roles/ansible-nodejs
   - ansible-playbook --syntax-check -i inventory harp.yml
   - ansible-playbook -i inventory harp.yml --connection=local --sudo
