@@ -20,8 +20,15 @@
   sudo: no
   when: harp_build_source_type == 'tar'
 
-- name: build - perform build with harp
+- name: build - perform build with harp using nodejs from source
   command: harp compile . {{ harp_build_output_path }} chdir={{ harp_build_sources_path }}/{{ harp_build_site_name }}
+  environment:
+    PATH: "{{ nodejs_prefix }}/bin:{{ ansible_env.PATH }}"
+  when: nodejs_install_method == 'source'
+
+- name: build - perform build with harp using nodejs from package
+  command: harp compile . {{ harp_build_output_path }} chdir={{ harp_build_sources_path }}/{{ harp_build_site_name }}
+  when: nodejs_install_method == 'package'
 
 - name: build - create directory for assets
   file: dest={{ harp_build_output_path }}/assets state=directory

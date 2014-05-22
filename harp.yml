@@ -3,13 +3,6 @@
   hosts: all
   sudo: yes
 
-  roles:
-    - Ansibles.nodejs
-
-- name: harp - build sample webapp
-  hosts: all
-  sudo: yes
-
   vars:
     nodejs_install_method: "source"
     nodejs_version: "0.10.26"
@@ -19,5 +12,8 @@
   vars_files:
     - 'defaults/main.yml'
 
-  tasks:
+  roles:
+    - ansible-nodejs
+
+  post_tasks:
     - include: 'tasks/main.yml'
