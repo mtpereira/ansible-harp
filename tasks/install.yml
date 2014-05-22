@@ -1,12 +1,3 @@
 ---
-- name: harp - check for npm
-  command: npm --version
-  register: npm
-  ignore_errors: yes
-
-- name: harp - install nodejs
-  apt: pkg=nodejs update_cache=yes cache_valid_time=3600 state=present
-  when: npm.rc != 0
-
 - name: harp - install harp
   npm: name=harp global=yes state=present

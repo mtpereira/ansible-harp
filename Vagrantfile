@@ -20,9 +20,9 @@ Vagrant.configure("2") do |config|
       shell.inline = "sudo apt-get update && sudo apt-get -y install python-pycurl"
     end
 
-#    ap.vm.provision :ansible do |ansible|
-#      ansible.playbook = "harp.yml"
-#      ansible.verbose = false
-#    end
+    ap.vm.provision :ansible do |ansible|
+      ansible.playbook = "harp.yml"
+      ansible.verbose = false
+    end
   end
 end

@@ -6,7 +6,6 @@ This role installs Harp (http://harpjs.com/) and builds a webapp from a given gi
 
 ## Requirements
 
-
 None.
 
 ## Role Variables
@@ -25,23 +24,19 @@ None.
 * `harp_build_git_repo_branch`: Git branch to fetch. Defaults to `master`.
 * `harp_build_assets`: List with files and/or directories inside an `_assets` dir in your webapp source. It is used for placing non-compiled assets in your webapp after compilation.
 
-Dependencies
-------------
+## Dependencies
 
-None, but using **mtpereira.common** or a similar role is recommended.
+* **Ansibles.nodejs** for installing nodejs.
 
-Testing
--------
+## Testing
 
 For testing purposes, a Vagrantfile was added. Simply run ```./test.sh``` in your working copy dir to get a Debian host up and provisioned with ```harp.yml``` playbook.
 
-License
--------
+## License
 
 MIT
 
-Author Information
-------------------
+## Author Information
 
 [GitHub project page](https://github.com/mtpereira/ansible-harp)
 
