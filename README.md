@@ -36,6 +36,10 @@ For testing purposes, a Vagrantfile was added. Simply run ```./test.sh``` in you
 
 MIT
 
+## Thanks
+
+Thanks to [@Ansibles](https://github.com/Ansibles) for their [nodejs role](https://galaxy.ansible.com/list#/roles/557) and [@cauliturtle](https://github.com/cauliturtle) for allowing me to use his [harp-simple-blog](https://github.com/cauliturtle/harp-simple-blog) for testing and CI!
+
 ## Author Information
 
 [GitHub project page](https://github.com/mtpereira/ansible-harp)
