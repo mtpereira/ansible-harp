@@ -4,11 +4,11 @@ galaxy_info:
   description: Ansible role for installing Harpjs and compiling an webapp.
   license: MIT
   min_ansible_version: 1.5
+  platforms:
     - name: Debian
       versions:
         - wheezy
   categories:
     - web
 dependencies:
-  - Ansibles.build-essential
   - Ansibles.nodejs
