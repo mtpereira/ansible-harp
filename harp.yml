@@ -13,7 +13,7 @@
     - 'defaults/main.yml'
 
   roles:
-    - ansible-nodejs
+    - Ansibles.nodejs
 
   post_tasks:
     - include: 'tasks/main.yml'
