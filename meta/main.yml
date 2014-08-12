@@ -10,3 +10,5 @@ galaxy_info:
         - wheezy
   categories:
     - web
+dependencies:
+  - Ansibles.nodejs
