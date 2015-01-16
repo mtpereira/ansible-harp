@@ -1,4 +1,4 @@
-# Harp [![Build Status](https://travis-ci.org/mtpereira/ansible-harp.svg)](https://travis-ci.org/mtpereira/ansible-harp)
+# Harp.js [![Build Status](https://travis-ci.org/mtpereira/ansible-harp.svg)](https://travis-ci.org/mtpereira/ansible-harp)
 
 Ansible role for installing Harpjs and compiling an webapp.
 
@@ -26,7 +26,7 @@ None.
 
 ## Dependencies
 
-* **Ansibles.nodejs** for installing nodejs.
+* **nodesource.node** for installing nodejs.
 
 ## Testing
 
@@ -38,7 +38,7 @@ MIT
 
 ## Thanks
 
-Thanks to [@Ansibles](https://github.com/Ansibles) for their [nodejs role](https://galaxy.ansible.com/list#/roles/557) and [@cauliturtle](https://github.com/cauliturtle) for allowing me to use his [harp-simple-blog](https://github.com/cauliturtle/harp-simple-blog) for testing and CI!
+Thanks to [@nodesource](https://github.com/nodesource) for their [nodejs role](https://github.com/nodesource/ansible-nodejs-role/), [@Ansibles](https://github.com/Ansibles) for their [nodejs role](https://galaxy.ansible.com/list#/roles/557) and [@cauliturtle](https://github.com/cauliturtle) for allowing me to use his [harp-simple-blog](https://github.com/cauliturtle/harp-simple-blog) for testing and CI!
 
 ## Author Information
 
