@@ -7,11 +7,5 @@
     harp_build_git_repo: 'https://github.com/cauliturtle/harp-simple-blog'
     harp_build_site_name: 'harp-simple-blog'
 
-  vars_files:
-    - 'defaults/main.yml'
-
   roles:
-    - nodesource.node
-
-  post_tasks:
-    - include: 'tasks/main.yml'
+    - .
