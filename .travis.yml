@@ -1,14 +1,20 @@
 ---
 language: python
+
 python: "2.7"
+
 before_install:
  - sudo apt-get update -qq
  - sudo apt-get install -qq python-apt python-pycurl
+
 install:
   - pip install ansible==1.8.2
-script:
+  - "printf '[defaults]\\nroles_path = ../' > ansible.cfg"
+
+before_script:
+  - ansible-galaxy install nodesource.node
   - echo localhost > inventory
-  - mkdir -p /home/travis/build/mtpereira/ansible-harp/roles/
-  - ansible-galaxy install --ignore-errors -p /home/travis/build/mtpereira/ansible-harp/roles/ nodesource.node
+
+script:
   - ansible-playbook --syntax-check -i inventory harp.yml
   - ansible-playbook -i inventory harp.yml --connection=local --sudo
