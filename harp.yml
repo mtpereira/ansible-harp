@@ -4,16 +4,8 @@
   sudo: yes
 
   vars:
-    nodejs_install_method: "source"
-    nodejs_version: "0.10.26"
     harp_build_git_repo: 'https://github.com/cauliturtle/harp-simple-blog'
     harp_build_site_name: 'harp-simple-blog'
 
-  vars_files:
-    - 'defaults/main.yml'
-
   roles:
-    - Ansibles.nodejs
-
-  post_tasks:
-    - include: 'tasks/main.yml'
+    - .

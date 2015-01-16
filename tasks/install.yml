@@ -1,3 +1,6 @@
 ---
 - name: harp - install harp
-  npm: name=harp global=yes state=present
+  npm:
+    name: harp
+    global: yes
+    state: present

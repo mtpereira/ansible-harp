@@ -11,4 +11,4 @@ galaxy_info:
   categories:
     - web
 dependencies:
-  - Ansibles.nodejs
+  role: nodesource.node

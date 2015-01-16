@@ -1,3 +1,5 @@
 ---
-- include: install.yml tags=harp_install
-- include: build.yml   tags=harp_build
+- include: install.yml
+  tags: harp_install
+- include: build.yml
+  tags: harp_build
