@@ -3,4 +3,5 @@
   npm:
     name: harp
     global: yes
-    state: present
+    state: "{{ harp_install_state }}"
+

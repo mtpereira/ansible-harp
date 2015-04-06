@@ -23,6 +23,7 @@ None.
 * `harp_build_source_type`: Defines whether to fetch the webapp sources from a git repository (`git`) or a local tarball (`tar`). Defaults to `git`.
 * `harp_build_git_repo_branch`: Git branch to fetch. Defaults to `master`.
 * `harp_build_assets`: List with files and/or directories inside an `_assets` dir in your webapp source. It is used for placing non-compiled assets in your webapp after compilation.
+* `harp_install_state`: State for `npm` module for harpjs installation, which can be `present`, `latest` or `absent`. Defaults to `present`.
 
 ## Dependencies
 

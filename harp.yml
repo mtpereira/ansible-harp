@@ -6,6 +6,15 @@
   vars:
     harp_build_git_repo: 'https://github.com/cauliturtle/harp-simple-blog'
     harp_build_site_name: 'harp-simple-blog'
+    harp_install_state: 'latest'
+
+  pre_tasks:
+    - name: tests - install git
+      apt:
+        pkg: git
+        update_cache: yes
+        cache_valid_time: 3600
+        state: present
 
   roles:
     - .
